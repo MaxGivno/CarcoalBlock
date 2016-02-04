@@ -31,6 +31,7 @@ public class BlockBase extends BlockContainer {
         setStepSound(Block.soundTypeStone);
         setHardness(2.2F);
         setResistance(5.0F);
+        setHarvestLevel("pickaxe", 0);
     }
 
     @Override

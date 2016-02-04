@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 public enum Blocks {
-    BLOCK_CHARCOAL("charcoalblock", new BlockCharcoalBlock())
+    BLOCK_CHARCOAL("charcoalblock", new BlockCharcoalBlock(), CreativeTabs.tabBlock)
     ;
 
     private static boolean registered = false;
