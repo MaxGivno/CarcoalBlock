@@ -4,7 +4,6 @@ import dev.maxgivno.charcoalblock.block.Blocks;
 import dev.maxgivno.charcoalblock.util.FuelHandler;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.IFuelHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public abstract class CommonProxy implements IProxy{
