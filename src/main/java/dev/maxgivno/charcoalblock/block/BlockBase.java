@@ -38,7 +38,7 @@ public class BlockBase extends BlockContainer {
     public TileEntity createNewTileEntity(World var1, int var2) {
         if (hasBlockTileEntity()) {
             try {
-                return (TileEntity) this.tileEntityType.newInstance();
+                return this.tileEntityType.newInstance();
             } catch (Throwable e) {
                 throw new RuntimeException(e);
             }
@@ -59,7 +59,7 @@ public class BlockBase extends BlockContainer {
     }
 
     private void setTileProvider(boolean b) {
-        ReflectionHelper.setPrivateValue(Block.class, this, Boolean.valueOf(b), new String[]{"isTileProvider"});
+        ReflectionHelper.setPrivateValue(Block.class, this, b, "isTileProvider");
     }
 
     public Class<? extends TileEntity> getTileEntityClass() {
