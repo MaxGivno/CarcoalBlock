@@ -2,7 +2,10 @@ package dev.maxgivno.charcoalblock.block;
 
 import dev.maxgivno.charcoalblock.helpers.LogHelper;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.fml.common.registry.GameRegistry;

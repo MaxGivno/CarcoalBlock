@@ -30,6 +30,8 @@ public class CharcoalBlock {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        //Register ItemBlocks
+        proxy.registerItemBlocks();
 
     }
 
