@@ -1,6 +1,7 @@
 package dev.maxgivno.charcoalblock.block;
 
 import dev.maxgivno.charcoalblock.helpers.LogHelper;
+import dev.maxgivno.charcoalblock.reference.ModInfo;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
@@ -16,6 +17,7 @@ public enum Blocks {
     ;
 
     private static boolean registered = false;
+    private static boolean rendered = false;
     public final Block block;
     private final String internalName;
     private final Class<? extends ItemBlock> itemBlockClass;
@@ -59,5 +61,19 @@ public enum Blocks {
     private void register() {
         GameRegistry.registerBlock(block.setCreativeTab(creativeTabs).setUnlocalizedName(internalName), itemBlockClass, internalName);
         LogHelper.info("Registered Block: " + internalName);
+    }
+
+    public static void registerRenders(){
+        if (rendered)
+            return;
+        for (Blocks b : Blocks.values())
+            b.registerRender();
+        rendered = true;
+    }
+
+    public void registerRender() {
+        Item item = Item.getItemFromBlock(block);
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(ModInfo.MOD_ID + ":" + internalName, "inventory"));
+        LogHelper.info("Rendered Block: " + internalName);
     }
 }

@@ -7,5 +7,5 @@ public interface IProxy {
 
     void registerFuels();
 
-    void registerItemBlocks();
+    void registerRenders();
 }

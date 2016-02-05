@@ -31,13 +31,12 @@ public class CharcoalBlock {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         //Register ItemBlocks
-        proxy.registerItemBlocks();
+        proxy.registerRenders();
 
     }
 
     @Mod.EventHandler
-    public void init(FMLPostInitializationEvent event) {
-
+    public void postInit(FMLPostInitializationEvent event) {
 
     }
 }
