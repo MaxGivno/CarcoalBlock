@@ -1,5 +1,6 @@
 package dev.maxgivno.charcoalblock.item;
 
+import dev.maxgivno.charcoalblock.creativetab.TabCHB;
 import dev.maxgivno.charcoalblock.helpers.LogHelper;
 import dev.maxgivno.charcoalblock.reference.ModInfo;
 import net.minecraft.client.Minecraft;
@@ -9,7 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public enum Items {
-    ITEM_TRIDENT("trident", new ItemTrident(), CreativeTabs.tabFood)
+    ITEM_TRIDENT("trident", new ItemTrident(), )
     ;
 
     private static boolean registered = false;
