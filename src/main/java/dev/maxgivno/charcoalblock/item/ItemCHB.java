@@ -1,29 +1,34 @@
 package dev.maxgivno.charcoalblock.item;
 
-import dev.maxgivno.charcoalblock.helpers.LogHelper;
-import dev.maxgivno.charcoalblock.reference.ModInfo;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
+import dev.maxgivno.charcoalblock.creativetab.TabCHB;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.world.World;
 
 public class ItemCHB extends Item{
     public ItemCHB(){
         super();
+        this.maxStackSize = 1;
+        this.setCreativeTab(TabCHB.TabCHB);
+        this.setNoRepair();
+    }
+
+    @Override
+    public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
+        return super.onItemRightClick(itemStackIn, worldIn, playerIn);
     }
 
     @Override
     public String getUnlocalizedName()
     {
-        return String.format("item.%s%s", ModInfo.LOWERCASE_MOD_ID + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return String.format("item.%s", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
     @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
-        return String.format("item.%s%s", ModInfo.LOWERCASE_MOD_ID + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return String.format("item.%s", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
@@ -31,11 +36,5 @@ public class ItemCHB extends Item{
         return unlocalizedName.substring(unlocalizedName.indexOf(".") + 1);
     }
 
-    @SideOnly(Side.CLIENT)
-    public void registerRender()
-    {
-        Item item = Item.getByNameOrId(getUnlocalizedName());
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(getUnwrappedUnlocalizedName(super.getUnlocalizedName()), "inventory"));
-        LogHelper.info("Rendered Block: " + getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
-    }
+
 }

@@ -1,7 +1,7 @@
 package dev.maxgivno.charcoalblock.proxy;
 
 import dev.maxgivno.charcoalblock.block.Blocks;
-import dev.maxgivno.charcoalblock.item.ItemCHB;
+import dev.maxgivno.charcoalblock.init.ModItems;
 import dev.maxgivno.charcoalblock.util.FuelHandler;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -10,7 +10,11 @@ public abstract class CommonProxy implements IProxy{
     @Override
     public void registerBlocks() {
         Blocks.registerAll();
-        ItemCHB.registerItems();
+    }
+
+    @Override
+    public void registerItems() {
+        ModItems.init();
     }
 
     @Override

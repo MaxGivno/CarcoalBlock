@@ -4,5 +4,6 @@ public class ItemTrident extends ItemCHB {
     public ItemTrident() {
         super();
         this.setUnlocalizedName("trident");
+        this.maxStackSize = 64;
     }
 }

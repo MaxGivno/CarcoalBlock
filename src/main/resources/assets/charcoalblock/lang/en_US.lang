@@ -3,3 +3,6 @@ tile.charcoalblock.name=Block of Charcoal
 
 #Items
 item.trident.name=Trident
+
+#CreativeTabs
+itemGroup.charcoalblock=Simple Charcoal Block

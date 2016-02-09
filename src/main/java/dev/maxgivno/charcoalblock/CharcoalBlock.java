@@ -1,6 +1,5 @@
 package dev.maxgivno.charcoalblock;
 
-import dev.maxgivno.charcoalblock.creativetab.TabCHB;
 import dev.maxgivno.charcoalblock.proxy.IProxy;
 import dev.maxgivno.charcoalblock.reference.ModInfo;
 import net.minecraftforge.fml.common.Mod;
@@ -17,18 +16,20 @@ public class CharcoalBlock {
     @SidedProxy(clientSide = ModInfo.CLIENT_PROXY_CLASS, serverSide = ModInfo.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
-    public static final TabCHB TabCHB = new TabCHB("TabCHB");
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         //Register Blocks
         proxy.registerBlocks();
+
+        //Register Items
+        proxy.registerItems();
 
         //Register Recipes
         proxy.registerRecipes();
 
         //Register Fuel Registry
         proxy.registerFuels();
+
     }
 
     @Mod.EventHandler

@@ -1,6 +1,7 @@
 package dev.maxgivno.charcoalblock.block;
 
 import dev.maxgivno.charcoalblock.CharcoalBlock;
+import dev.maxgivno.charcoalblock.creativetab.TabCHB;
 import dev.maxgivno.charcoalblock.helpers.LogHelper;
 import dev.maxgivno.charcoalblock.reference.ModInfo;
 import net.minecraft.block.Block;
@@ -14,7 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 public enum Blocks {
-    BLOCK_CHARCOAL("charcoalblock", new BlockCharcoalBlock(), CharcoalBlock.TabCHB)
+    BLOCK_CHARCOAL("charcoalblock", new BlockCharcoalBlock(), TabCHB.TabCHB)
     ;
 
     private static boolean registered = false;
