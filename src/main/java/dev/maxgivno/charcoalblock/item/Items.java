@@ -18,7 +18,7 @@ public enum Items {
     private static boolean rendered = false;
     public final Item item;
     private final String internalName;
-    private final Class<? extends ItemBlock> itemBlockClass;
+    private final Class<? extends ItemCHB> itemCHBClass;
     private final CreativeTabs creativeTabs;
 
     Items(String internalName, Item item, CreativeTabs creativeTabs) {
@@ -27,10 +27,10 @@ public enum Items {
         this.creativeTabs = creativeTabs;
     }
 
-    Items(String internalName, Item item, Class<? extends ItemBlock> itemBlockClass, CreativeTabs creativeTabs) {
+    Items(String internalName, Item item, Class<? extends ItemCHB> itemCHBClass, CreativeTabs creativeTabs) {
         this.internalName = internalName;
         this.item = item;
-        this.itemBlockClass = itemBlockClass;
+        this.itemCHBClass = itemCHBClass;
         this.creativeTabs = creativeTabs;
     }
 
