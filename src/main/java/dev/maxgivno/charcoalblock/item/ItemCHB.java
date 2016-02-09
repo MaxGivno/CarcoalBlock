@@ -17,13 +17,13 @@ public class ItemCHB extends Item{
     @Override
     public String getUnlocalizedName()
     {
-        return String.format("item.%s%s", ModInfo.LOWERCASE_MOD_ID, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return String.format("item.%s%s", ModInfo.LOWERCASE_MOD_ID + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
     @Override
     public String getUnlocalizedName(ItemStack itemStack)
     {
-        return String.format("item.%s%s", ModInfo.LOWERCASE_MOD_ID, getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
+        return String.format("item.%s%s", ModInfo.LOWERCASE_MOD_ID + ":", getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
 
     protected String getUnwrappedUnlocalizedName(String unlocalizedName)
@@ -38,8 +38,4 @@ public class ItemCHB extends Item{
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(getUnwrappedUnlocalizedName(super.getUnlocalizedName()), "inventory"));
         LogHelper.info("Rendered Block: " + getUnwrappedUnlocalizedName(super.getUnlocalizedName()));
     }
-
-
-
-
 }
