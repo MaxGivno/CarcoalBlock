@@ -1,9 +1,4 @@
 package dev.maxgivno.charcoalblock.item;
 
-import net.minecraft.item.Item;
-
-public class ItemTrident extends Item {
-    public ItemTrident() {
-        super();
-    }
+public class ItemTrident extends ItemCHB {
 }
