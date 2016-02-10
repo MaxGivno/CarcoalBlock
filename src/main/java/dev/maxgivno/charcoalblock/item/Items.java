@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public enum Items {
@@ -18,19 +17,11 @@ public enum Items {
     private static boolean rendered = false;
     public final Item item;
     private final String internalName;
-    private final Class<? extends ItemCHB> itemCHBClass;
     private final CreativeTabs creativeTabs;
 
     Items(String internalName, Item item, CreativeTabs creativeTabs) {
         this.internalName = internalName;
         this.item = item;
-        this.creativeTabs = creativeTabs;
-    }
-
-    Items(String internalName, Item item, Class<? extends ItemCHB> itemCHBClass, CreativeTabs creativeTabs) {
-        this.internalName = internalName;
-        this.item = item;
-        this.itemCHBClass = itemCHBClass;
         this.creativeTabs = creativeTabs;
     }
 
