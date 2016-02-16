@@ -6,7 +6,7 @@ import dev.maxgivno.charcoalblock.init.ModItems;
 public class ClientProxy extends CommonProxy {
     @Override
     public void registerRenders() {
-        Blocks.registerRenders();
+        Blocks.registerAll();
         ModItems.registerRenders();
     }
 }
